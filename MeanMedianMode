@@ -1,0 +1,47 @@
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+       double mean;
+       double sizem=0;
+       int sum=0;
+       int size=sc.nextInt();
+       int arr[]=new int[size];
+       for(int i=0;i<size;i++){
+        arr[i]=sc.nextInt();
+        sum+=arr[i];
+       }
+       mean=(double)sum/size;
+       Arrays.sort(arr);
+       if(size%2==0){
+           sizem=arr[(size/2)-1]+arr[(size/2)];
+           sizem=sizem/2;
+       }else{
+           sizem=(double)arr[size/2];
+       }
+        int mode=0,maxc=0,itr,count=0;
+       for(int i=0;i<arr.length;i++){
+           itr=arr[i];
+           count=0;
+           for(int j=0;j<arr.length;j++){
+            if(itr==arr[j]){
+                ++count;}
+            if(count>maxc){
+               maxc=count;
+            
+            if(maxc==1){
+                mode=arr[0];
+            }
+            mode=itr;
+            }
+            }
+        } 
+       
+       
+       System.out.println(mean);
+       System.out.println(sizem);
+         
+        System.out.println(mode);
+    }
+}
+
